@@ -19,8 +19,9 @@ const Input = ({ city, setCity, onPress = () => {}, onPressLocation }) => {
       />
       <Ionicons
         style={styles.iconGetLoc}
-        name="location"
+        name="location-outline"
         size={40}
+        color="white"
         onPress={onPressLocation}
       />
     </View>
@@ -35,12 +36,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#eaeaea",
     width: "85%",
     borderColor: "black",
-    borderWidth:1 ,
+    borderWidth: 1,
     padding: 5,
     borderRadius: 10,
     marginRight: 5,
-    marginLeft:5,
-    fontSize:20
+    marginLeft: 5,
+    fontSize: 20,
   },
   iconSearch: {
     position: "absolute",
