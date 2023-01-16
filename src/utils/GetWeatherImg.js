@@ -17,10 +17,10 @@ export default GetWeatherImg;
 
 const styles = StyleSheet.create({
   img: {
-    top: 105,
+    top: 100,
     width: 150,
     height: 150,
-    right: 10,
+    left: 0,
     bottom: 5,
   },
   img5: {

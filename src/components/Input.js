@@ -9,7 +9,7 @@ const Input = ({ city, setCity, onPress = () => {}, onPressLocation }) => {
         value={city}
         style={styles.input}
         onChangeText={setCity}
-        placeholder="Search City"
+        placeholder="Şehir ara"
       ></TextInput>
       <Ionicons
         style={styles.iconSearch}
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     width: "85%",
     borderColor: "black",
     borderWidth: 1,
-    padding: 5,
-    borderRadius: 10,
+    padding: 8,
+    borderRadius: 15,
     marginRight: 5,
     marginLeft: 5,
     fontSize: 20,
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flexDirection: "row",
-    marginVertical: 10,
+    marginVertical: 15,
     alignItems: "center",
   },
 });

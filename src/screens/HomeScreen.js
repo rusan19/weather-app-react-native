@@ -6,6 +6,7 @@ import * as Location from "expo-location";
 import WeatherList from "../components/WeatherList";
 import { timeConverter } from "../helpers/timeConverter";
 import { TouchableOpacity } from "react-native-gesture-handler";
+
 const HomeScreen = () => {
   const [city, setCity] = useState("");
   const [data, setData] = useState([]);
@@ -89,7 +90,9 @@ const HomeScreen = () => {
               },
             ]}
           >
-            <Text style={{ color: "white", fontSize: 17 }}>BUGÜN</Text>
+            <Text style={{ color: "white", fontSize: 17, fontWeight: "bold" }}>
+              BUGÜN
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[
@@ -102,7 +105,9 @@ const HomeScreen = () => {
             activeOpacity={0.9}
             onPress={daily5Press}
           >
-            <Text style={{ color: "white", fontSize: 17 }}>5 GÜN</Text>
+            <Text style={{ color: "white", fontSize: 17, fontWeight: "bold" }}>
+              5 GÜN
+            </Text>
           </TouchableOpacity>
         </View>
       )}
@@ -124,7 +129,7 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: "center",
-    backgroundColor: "#0254f5",
+    backgroundColor: "#085fd8",
     flex: 1,
   },
   listCntainer: {
@@ -139,7 +144,7 @@ const styles = StyleSheet.create({
   button: {
     width: 195,
     height: 40,
-    backgroundColor: "#0254f5",
+    backgroundColor: "#085fd8",
     alignItems: "center",
     justifyContent: "center",
   },
