@@ -31,17 +31,6 @@ const WeatherList = ({ item, type = "today" }) => {
     "moderate rain": "Yağışlı",
     "light snow": "Kar Yağışlı",
   };
-  const WeatherScreen = (props) => {
-    let animationSource = require("");
-    if (item) {
-      const image = item.weather[0].icon;
-      switch (image) {
-        case "01d":
-          animationSource = require("../../assets/weather/sunny.json");
-          break;
-      }
-    }
-  };
   return (
     <View
       style={[
@@ -55,10 +44,13 @@ const WeatherList = ({ item, type = "today" }) => {
         } ${moment(item.dt_txt).date()}`}
       </Text>
       <GetWeatherImg img={item.weather[0].icon} type={type} />
-      <LottieView
-        source={require("../../assets/weather/sunny.json")}
-        autoPlay
-      />
+      {
+        <LottieView
+          style={[styles.anim, type === "daily5" && styles.anim5]}
+          source={require(`../../assets/weather/${item.weather[0].icon}.json`)}
+          autoPlay
+        />
+      }
       <Text style={[styles.temp, type === "daily5" && styles.temp5]}>
         {Math.floor(item.main.temp)}°
       </Text>
