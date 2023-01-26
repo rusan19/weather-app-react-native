@@ -14,7 +14,7 @@ const Input = ({ city, setCity, onPress = () => {}, onPressLocation }) => {
       <Ionicons
         style={styles.iconSearch}
         name="search"
-        size={35}
+        size={40}
         onPress={onPress}
       />
       <Ionicons
@@ -34,22 +34,27 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     backgroundColor: "#eaeaea",
-    width: "85%",
+    width: "75%",
     borderColor: "black",
     borderWidth: 1,
     padding: 8,
-    borderRadius: 15,
+    borderRadius: 10,
     marginRight: 5,
     marginLeft: 5,
     fontSize: 20,
+    right: 20,
   },
   iconSearch: {
     position: "absolute",
-    right: 50,
+    right: 20,
+    color: "white",
   },
   inputContainer: {
     flexDirection: "row",
     marginVertical: 15,
     alignItems: "center",
+  },
+  iconGetLoc: {
+    left: 20,
   },
 });

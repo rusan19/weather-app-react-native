@@ -31,6 +31,7 @@ const WeatherList = ({ item, type = "today" }) => {
     "moderate rain": "Yağışlı",
     "light snow": "Kar Yağışlı",
   };
+
   return (
     <View
       style={[
@@ -45,11 +46,11 @@ const WeatherList = ({ item, type = "today" }) => {
       </Text>
       <GetWeatherImg img={item.weather[0].icon} type={type} />
       {
-        <LottieView
-          style={[styles.anim, type === "daily5" && styles.anim5]}
-          source={require(`../../assets/weather/${item.weather[0].icon}.json`)}
-          autoPlay
-        />
+        // <LottieView
+        //   // style={[styles.anim, type === "daily5" && styles.anim5]}
+        //   source={require(`../../assets/weather/${item.weather[0].icon}.json`)}
+        //   autoPlay
+        // />
       }
       <Text style={[styles.temp, type === "daily5" && styles.temp5]}>
         {Math.floor(item.main.temp)}°

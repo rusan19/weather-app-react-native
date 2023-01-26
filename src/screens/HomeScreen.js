@@ -6,6 +6,7 @@ import * as Location from "expo-location";
 import WeatherList from "../components/WeatherList";
 import { timeConverter } from "../helpers/timeConverter";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { LinearGradient } from "expo-linear-gradient";
 
 const HomeScreen = () => {
   const [city, setCity] = useState("");
@@ -70,7 +71,10 @@ const HomeScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      style={styles.container}
+      colors={["#1a2980", "#0072ff", "#00c6ff"]}
+    >
       <Input
         city={city}
         setCity={setCity}
@@ -117,7 +121,7 @@ const HomeScreen = () => {
         data={data}
         renderItem={renderWeather}
       />
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -129,7 +133,7 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: "center",
-    backgroundColor: "#085fd8",
+    // backgroundColor: "#085fd8",
     flex: 1,
   },
   listCntainer: {
@@ -144,7 +148,7 @@ const styles = StyleSheet.create({
   button: {
     width: 195,
     height: 40,
-    backgroundColor: "#085fd8",
+    backgroundColor: "transparent",
     alignItems: "center",
     justifyContent: "center",
   },
