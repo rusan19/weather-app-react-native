@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import GetWeatherImg from "../utils/GetWeatherImg";
 import moment from "moment";
-import LottieView from "lottie-react-native";
 
 const WeatherList = ({ item, type = "today" }) => {
   const numberToDay = {
@@ -18,6 +17,16 @@ const WeatherList = ({ item, type = "today" }) => {
   const numberToMonth = {
     0: "Ocak",
     1: "Şubat",
+    2: "Mart",
+    3: "Nisan,",
+    4: "Mayıs",
+    5: "Haziran",
+    6: "Temmuz",
+    7: "Ağustos",
+    8: "Eylül",
+    9: "Ekim",
+    10: "Kasım",
+    11: "Aralık",
   };
 
   const nameWeather = {
@@ -32,7 +41,6 @@ const WeatherList = ({ item, type = "today" }) => {
     "light snow": "Kar Yağışlı",
     snow: "Kar Yağışlı",
   };
-  // console.log(item);
 
   return (
     <View
@@ -46,13 +54,6 @@ const WeatherList = ({ item, type = "today" }) => {
           numberToMonth[moment(item.dt_txt).month()]
         } ${moment(item.dt_txt).date()}`}
       </Text>
-      {
-        // <LottieView
-        //   style={[styles.anim, type === "daily5" && styles.anim5]}
-        //   source={require(`../../assets/weather/f.json`)}
-        //   autoPlay
-        // />
-      }
       <Text style={[styles.temp, type === "daily5" && styles.temp5]}>
         {Math.floor(item.main.temp)}°
       </Text>
@@ -68,16 +69,10 @@ const WeatherList = ({ item, type = "today" }) => {
         Nem: %{item.main.humidity} 💦
       </Text>
       <Text style={[styles.ruzgar5, type === "today" && styles.ruzgar]}>
-        Rüzgar: {(item.wind.speed * 3.6).toString().substring(0, 4)} km/s. 💨
+        Rüzgar: {(item.wind.speed * 3.6).toString().substring(0, 4)} km/s.💨
       </Text>
       <Text style={[styles.feels5, type === "today" && styles.feels]}>
         Hissedilen: {Math.floor(item.main.feels_like)}°
-      </Text>
-      <Text style={[styles.night5, type === "today" && styles.night]}>
-        Gece: 1°↓
-      </Text>
-      <Text style={[styles.morning5, type === "today" && styles.morning]}>
-        Gündüz: 15°↑
       </Text>
     </View>
   );
@@ -122,6 +117,7 @@ const styles = StyleSheet.create({
     color: "white",
     alignItems: "center",
     textAlign: "center",
+    fontWeight: "bold",
   },
   dateText5: {
     fontSize: 20,
@@ -140,7 +136,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   feels: {
-    top: 10,
+    top: 35,
     fontSize: 24,
     color: "white",
     right: -100,
@@ -150,7 +146,7 @@ const styles = StyleSheet.create({
     top: -1000,
   },
   nem: {
-    top: 176,
+    top: 140,
     color: "white",
     left: 100,
     fontSize: 24,
@@ -160,7 +156,7 @@ const styles = StyleSheet.create({
     top: -1000,
   },
   ruzgar: {
-    top: 177,
+    top: 150,
     color: "white",
     left: 100,
     fontSize: 24,
@@ -178,25 +174,5 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     width: 150,
     left: -15,
-  },
-  night: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 24,
-    top: 12,
-    left: 100,
-  },
-  night5: {},
-  morning: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 24,
-    top: 13,
-    left: 100,
-  },
-  morning5: {},
-  anim: {
-    top: -20,
-    right: 100,
   },
 });
